@@ -6,10 +6,12 @@ rm(housepower)
 datetime <- paste(as.Date(febdata$Date), febdata$Time)
 febdata$Datetime <- as.POSIXct(datetime)
 
-#Plot3
+#Make Plot3
 plot(febdata$Datetime, febdata$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="")
 lines(febdata$Datetime, febdata$Sub_metering_2, col="red")
 lines(febdata$Datetime, febdata$Sub_metering_3, col="blue")
 legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
+#Copy Plot3 to PNG
 dev.copy(png, file ="Plot3.png", height = 480, width = 480)
 dev.off()

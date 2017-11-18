@@ -6,7 +6,9 @@ rm(housepower)
 datetime <- paste(as.Date(febdata$Date), febdata$Time)
 febdata$Datetime <- as.POSIXct(datetime)
 
-#Plot2
+#Make Plot2
 plot(febdata$Global_active_power~febdata$Datetime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+
+#Copy Plot2 to PNG
 dev.copy(png, file ="Plot2.png", height = 480, width = 480)
 dev.off()

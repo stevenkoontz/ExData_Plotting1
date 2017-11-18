@@ -6,7 +6,9 @@ rm(housepower)
 datetime <- paste(as.Date(febdata$Date), febdata$Time)
 febdata$Datetime <- as.POSIXct(datetime)
 
-#Plot1
+#Make Plot1
 hist(febdata$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+
+#Copy Plot1 to PNG
 dev.copy(png, file ="Plot1.png", height = 480, width = 480)
 dev.off()
